@@ -30,18 +30,18 @@
 
         <div>
             <h2 class="text-gray-700 font-bold text-5xl pb-4">
-            {{ $post->title() }}
+            {{ $post->getTitle() }}
             </h2>
 
             <span class="text-gray-500">
-                By <span class="font-bold italic text-gray-800">{{ $post->getUser()->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at())) }}
+                By <span class="font-bold italic text-gray-800">{{ $post->getUser()->name }}</span>, Created on {{ date('jS M Y', strtotime($post->getUpdatedAt())) }}
             </span>
 
             <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
-            {{ $post->body() }}
+            {{ $post->getBody() }}
             </p>
 
-            <a href="/blog/{{ $post->id()}}" class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
+            <a href="/blog/{{ $post->getId()}}" class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
                 Keep Reading
             </a>
 

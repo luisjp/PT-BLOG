@@ -6,12 +6,12 @@ use App\Blog\Infrastructure\Eloquent\User;
 
 class Post {
 
-    private $id;
-    private string $title;
-    private string $body;
-    private string $user_id;
-    private string $updated_at;
-    private User $user;
+    public $id;
+    public string $title;
+    public string $body;
+    public string $user_id;
+    public string $updated_at;
+    public User $user;
 
     public function __construct(
         int $id,
@@ -38,27 +38,27 @@ class Post {
         return $this->user;
     }
 
-    public function id(): int
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function title(): string
+    public function getTitle(): string
     {
         return $this->title;
     }
 
-    public function updated_at(): string
+    public function getUpdatedAt(): string
     {
         return $this->updated_at;
     }
 
-    public function body(): string
+    public function getBody(): string
     {
         return $this->body;
     }
     
-    public function user_id(): string
+    public function getUserId(): string
     {
         return $this->user_id;
     }
@@ -81,10 +81,10 @@ class Post {
 
     public function getMapValue(){
         return array(
-            'id' => $this->id(), 
-            'body' => $this->body(), 
-            'title' => $this->title(),
-            'userId' => $this->user_id()
+            'id' => $this->getId(), 
+            'body' => $this->getBody(), 
+            'title' => $this->getTitle(),
+            'userId' => $this->getUserId()
         );
     }
 }   

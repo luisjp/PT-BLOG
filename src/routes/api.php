@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::namespace('App\Blog\Presentation\Controllers')->group(function () {
-    Route::get('/users', 'UserController@index');
-    Route::get('/users/{id}', 'UserController@show');
-});
+Route::get('/blog/posts', [BlogController::class, 'index']);
+Route::get('/blog/posts/{id}', [BlogController::class, 'getPostById']);
+Route::post('/blog/posts', [BlogController::class, 'createPost']);

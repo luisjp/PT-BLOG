@@ -9,13 +9,13 @@ namespace App\Blog\Domain\Model;
  */
 final class User {
 
-    private $id;
+    public $id;
 
-    private string $name;
+    public string $name;
 
-    private string $email;
+    public string $email;
 
-    private string $password;
+    public string $password;
 
     public function __construct(
         int $id,
@@ -27,18 +27,30 @@ final class User {
         $this->email = $email;
     }
 
-    public function id(): int
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function name(): Name
+    public function setId($id): void{
+        $this->id = $id;
+    }
+
+    public function getName(): Name
     {
         return $this->name;
     }
 
-    public function email(): Email
+    public function setName(string $name): void{
+        $this->name = $name;
+    }
+
+    public function getEmail(): Email
     {
         return $this->email;
+    }
+
+    public function setEmail(string $email): void{
+        $this->email = $email;
     }
 }   

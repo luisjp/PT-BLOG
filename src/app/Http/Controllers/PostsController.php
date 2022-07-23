@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Blog\Domain\Model\Post;
+
 use App\Blog\Infrastructure\Repository\PostRepository;
 use App\Blog\Infrastructure\Repository\PostExternalRepository;
 use App\Blog\Infrastructure\Repository\UserRepository;
