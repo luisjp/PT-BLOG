@@ -6,6 +6,7 @@ use App\Blog\Domain\Model\Post;
 use App\Blog\Domain\Repository\PostExternalRepositoryInterface;
 use App\Blog\Infrastructure\JsonDataSource\PostDataExternal as PostData;
 use App\Blog\Infrastructure\Translator\PostTranslator;
+use App\Blog\Infrastructure\Tools\CheckRequestFromInputs;
 use Illuminate\Support\Collection;
 
 /**
@@ -27,11 +28,14 @@ class PostExternalRepository implements PostExternalRepositoryInterface
     }
 
     public function createPost(
-        string $title, 
-        string $body, 
+        string $title = "",
+        string $body  = "", 
         $userId = 1
     ): Post 
     {
+        $title = CheckRequestFromInputs::parseString($title);
+        $body = CheckRequestFromInputs::parseString($body);
+        
         $post = new Post(0, $title, $body, '2022-07-22', $userId);
 
         $newPost = $this->model->createPost($post);
