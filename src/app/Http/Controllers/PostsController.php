@@ -11,6 +11,7 @@ use App\Blog\Infrastructure\Repository\UserRepository;
 use  App\Blog\Application\Posts\PostsEloquent;
 use  App\Blog\Application\Posts\PostsExternal;
 
+
 class PostsController extends Controller
 {
 

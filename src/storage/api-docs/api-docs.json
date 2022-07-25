@@ -1,0 +1,99 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api Blog",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/blog/posts": {
+            "get": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Show all posts",
+                "description": "Show all posts from jsonplaceholder throught our api",
+                "operationId": "29b884a654182ef06eef32b5e9b1fc0d",
+                "responses": {
+                    "200": {
+                        "description": "Shows the entire list of posts in json format."
+                    },
+                    "default": {
+                        "description": "An error has occurred."
+                    }
+                }
+            }
+        },
+        "/api/blog/posts/{user_id}": {
+            "get": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Show posts by id",
+                "description": "Show post by id from jsonplaceholder throught our api",
+                "operationId": "d3ec1bdece70eb76dde067b2855cc300",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "ID of pet to fetch",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Shows post in json format."
+                    },
+                    "default": {
+                        "description": "An error has occurred."
+                    }
+                }
+            }
+        },
+        "/api/blog/posts/": {
+            "post": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Show posts by id",
+                "description": "Show post by id from jsonplaceholder throught our api",
+                "operationId": "fa32576db2bb634598729d6cd1b138d5",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "body"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "description": "title",
+                                        "type": "string"
+                                    },
+                                    "body": {
+                                        "description": "body",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Post created"
+                    },
+                    "default": {
+                        "description": "unexpected error"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\DocsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,4 @@ use App\Http\Controllers\BlogController;
 Route::get('/blog/posts', [BlogController::class, 'index']);
 Route::get('/blog/posts/{id}', [BlogController::class, 'getPostById']);
 Route::post('/blog/posts', [BlogController::class, 'createPost']);
+Route::get('/docs', [DocsController::class, 'index']);

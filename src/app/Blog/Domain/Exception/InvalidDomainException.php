@@ -1,6 +1,6 @@
 <?php
 
-namespace Demo\Domain\Exception;
+namespace App\Blog\Domain\Exception;
 
 class InvalidDomainException extends \Exception {
 
